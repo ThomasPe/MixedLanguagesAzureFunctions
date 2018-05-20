@@ -1,5 +1,13 @@
+var request = require('request');
+
 module.exports = function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
+
+    request('http://www.google.com', function (error, response, body) {
+        context.log('error:', error); // Print the error if one occurred
+        context.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        // context.log('body:', body); // Print the HTML for the Google homepage.
+      });
 
     if (req.query.name || (req.body && req.body.name)) {
         context.res = {

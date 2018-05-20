@@ -6,6 +6,12 @@
       "type": "clr",
       "request": "attach",
       "processId": "${command:azureFunctions.pickProcess}"
+    },
+    {
+      "name": "Attach to NodeJS Function",
+      "type": "node",
+      "request": "attach",
+      "port": 5858
     }
   ]
 }
